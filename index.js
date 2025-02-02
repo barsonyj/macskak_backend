@@ -39,6 +39,7 @@ app.get("/macskak", (req, res) => res.send(macskak));
 app.post("/macska", addMacska);
 app.delete("/macska/:id", delMacska);
 
-app.listen(88, (error) => {
-    if (error) console.log(error); else console.log("Server on 88");
+const port = process.env.PORT || 88;
+app.listen(port, (error) => {
+    if (error) console.log(error); else console.log("Server on " + port);
 })
